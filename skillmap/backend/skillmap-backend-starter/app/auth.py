@@ -1,8 +1,10 @@
+import os
 from passlib.context import CryptContext
 from datetime import datetime, timedelta
 from jose import jwt
 
-SECRET_KEY = "CHANGE_THIS_TO_A_RANDOM_SECRET"
+# Read SECRET_KEY from env in production
+SECRET_KEY = os.environ.get("SECRET_KEY", "CHANGE_THIS_TO_A_RANDOM_SECRET")
 ALGORITHM = "HS256"
 ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
